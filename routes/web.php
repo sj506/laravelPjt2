@@ -27,3 +27,6 @@ Route::get('/', function () {
 Route::get('/welcome', [App\Http\Controllers\HomeController::class, 'main'])->name('welcome')->withoutMiddleware('auth');
 Route::resource('/home', HomeController::class);
 // 포스트 후 view로 페이지 이동 하였을 때 index에 있는 db get 쿼리를 못 읽어 옴..
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

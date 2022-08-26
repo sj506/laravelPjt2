@@ -3,8 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\board;
-use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
@@ -33,21 +31,9 @@ class HomeController extends Controller
         return view('home', compact('data'));
         // return response()->json($data);
     }
-    public function main()
+
+    public function main() 
     {
         return view('welcome');
     }
-        public function store(Request $request)
-    {
-        //
-        board::create([
-            'title' => $request['title'],
-            'ctnt' => $request['ctnt'],
-        ]);
-
-        return view('home');
-        // return response()->json($request);
-        // Json 변환
-    }
-    
 }
